@@ -1,0 +1,17 @@
+.TextField{
+    background-color: rgb(64, 102, 86);
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+}
+.TextField input {
+    width: 300px; 
+    padding: 10px;
+    height: 30px;
+    margin-top: 20px;
+  }
+.TextField button {
+    width: 50px; 
+    height: 30px;
+    margin-top: 20px;
+  }

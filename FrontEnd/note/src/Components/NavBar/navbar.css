@@ -1,0 +1,14 @@
+body, html {
+    margin: 0;
+    height: 100%;
+}
+ 
+.Navbar{
+    background-color: black;
+    color: aliceblue;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
