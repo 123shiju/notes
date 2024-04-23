@@ -9,9 +9,28 @@
     padding: 10px;
     height: 30px;
     margin-top: 20px;
+    
   }
 .TextField button {
-    width: 50px; 
-    height: 30px;
-    margin-top: 20px;
+    width: 80px; 
+    height: 50px;
   }
+
+.display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.note{
+  margin: 20px;
+  padding: auto;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+}
+
+.note button{
+  width: 50px;
+  height: 20px;
+}
