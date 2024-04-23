@@ -6,12 +6,10 @@ const Note = () => {
   const [content, setContent] = useState("");
   const [displaycontent, setDisplaycontent] = useState([]);
 
-
   const handlechange = (e) => {
     e.preventDefault();
     setContent(e.target.value);
   };
-
 
   const handleaddText = async () => {
     try {
@@ -29,35 +27,42 @@ const Note = () => {
     }
   };
 
-
-  const handleDelete = (index) =>{
-    const newdisplaycontent = [...displaycontent]
-    newdisplaycontent.splice(index,1)
-    setDisplaycontent(newdisplaycontent)
-  }
+  const handleDelete = (index) => {
+    const newdisplaycontent = [...displaycontent];
+    newdisplaycontent.splice(index, 1);
+    setDisplaycontent(newdisplaycontent);
+  };
   return (
     <div className="container">
       <div className="TextField">
-        <div className="fixedfield">
         <input
           type="text"
           placeholder="Take a note ..."
           onChange={handlechange}
           value={content}
         />
-        <button onClick={handleaddText}>ADD</button>
+        <button className="bttn" onClick={handleaddText}>
+          ADD
+        </button>
+        <div className="display">
+          {displaycontent.map((value, index) => {
+            return (
+              <div className="note" key={index}>
+                <p>{value}</p>
+                <button
+                  class="btn"
+                  onClick={() => {
+                    handleDelete(index);
+                  }}
+                >
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            );
+          })}
         </div>
-      <div className="display">
-        {displaycontent.map((value, index) => {
-          return (
-            <div className="note" key={index}><p>{value}</p>
-            <button onClick={()=>{handleDelete(index)}}>Delete</button>
-            </div>
-          )
-        })}
-        </div>
-        </div>
-        </div>
+      </div>
+    </div>
   );
 };
 
